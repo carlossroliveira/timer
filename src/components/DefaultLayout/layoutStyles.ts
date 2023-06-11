@@ -11,5 +11,5 @@ export const ContainerSC = styled.div`
   display: flex;
   flex-direction: column;
 
-  background: ${({ theme }) => theme.GRAY_SCALE[800]};
+  background: ${({ theme }) => theme['gray-800']};
 `

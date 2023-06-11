@@ -15,16 +15,16 @@ export const HeaderContainer = styled.header`
       display: flex;
       justify-content: center;
       align-items: center;
-      color: ${(props) => props.theme.GRAY_SCALE[100]};
+      color: ${(props) => props.theme['gray-100']};
       border-top: 3px solid transparent;
       border-bottom: 3px solid transparent;
 
       &:hover {
-        border-bottom: 3px solid ${(props) => props.theme.GREEN_SCALE[500]};
+        border-bottom: 3px solid ${(props) => props.theme['green-500']};
       }
 
       &.active {
-        color: ${(props) => props.theme.GREEN_SCALE[500]};
+        color: ${(props) => props.theme['green-500']};
       }
     }
   }
