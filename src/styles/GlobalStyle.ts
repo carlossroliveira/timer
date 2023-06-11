@@ -20,8 +20,8 @@ body, input, texarea, button {
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
 
-  color: ${({ theme }) => theme.GREY_SCALE[300]};
-  background-color: ${({ theme }) => theme.GREY_SCALE[900]};
+  color: ${({ theme }) => theme.GRAY_SCALE[300]};
+  background-color: ${({ theme }) => theme.GRAY_SCALE[900]};
 }
 
 ::-webkit-scrollbar {
@@ -30,11 +30,11 @@ body, input, texarea, button {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 50px;
-  background-color: ${({ theme }) => theme.GREY_SCALE[900]};
-  border: 1px solid ${({ theme }) => theme.GREY_SCALE[900]};
+  background-color: ${({ theme }) => theme.GRAY_SCALE[900]};
+  border: 1px solid ${({ theme }) => theme.GRAY_SCALE[900]};
 }
 
 ::-webkit-scrollbar-button {
-  background-color: ${({ theme }) => theme.GREY_SCALE[900]};
+  background-color: ${({ theme }) => theme.GRAY_SCALE[900]};
 }
 `
