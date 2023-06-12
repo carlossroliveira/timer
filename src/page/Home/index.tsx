@@ -1,17 +1,22 @@
-import { HandPalm, Play } from 'phosphor-react'
-import { FormProvider, useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+// Packages
 import * as zod from 'zod'
+import { HandPalm, Play } from 'phosphor-react'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { FormProvider, useForm } from 'react-hook-form'
 
+// Context
+import { useCycles } from '../../contexts/cycles/useCycles'
+
+// Components
+import { Countdown } from './components/Countdown'
+import { NewCycleForm } from './components/NewCycleForm'
+
+// Styles
 import {
   HomeContainer,
-  StartCountdownButton,
   StopCountdownButton,
+  StartCountdownButton,
 } from './homeStyles'
-
-import { NewCycleForm } from './components/NewCycleForm'
-import { Countdown } from './components/Countdown'
-import { useCycles } from '../../contexts/cycles/useCycles'
 
 const newCycleFormValidationSchema = zod.object({
   task: zod.string().min(1, 'Informe a tarefa'),
@@ -23,7 +28,7 @@ const newCycleFormValidationSchema = zod.object({
 
 type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
 
-export function Home() {
+export const Home = () => {
   const { activeCycle, createNewCycle, interruptCurrentCycle } = useCycles()
 
   const newCycleForm = useForm<NewCycleFormData>({
