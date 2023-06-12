@@ -1,12 +1,17 @@
+// Packages
 import { useState } from 'react'
-import { IChildrenToContext } from '../../utilityTypes'
-import { CreateCycleData, Cycle } from './types'
+
+// Context
 import { MyCyclesContext } from './MyCyclesContext'
+
+// Types
+import { CreateCycleData, Cycle } from './types'
+import { IChildrenToContext } from '../../utilityTypes'
 
 export const CyclesContextProvider = ({ children }: IChildrenToContext) => {
   const [cycles, setCycles] = useState<Cycle[]>([])
-  const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
+  const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
 
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
 
@@ -51,6 +56,7 @@ export const CyclesContextProvider = ({ children }: IChildrenToContext) => {
         }
       }),
     )
+
     setActiveCycleId(null)
   }
 
