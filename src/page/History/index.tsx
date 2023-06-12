@@ -1,3 +1,7 @@
+// Packages
+import ptBR from 'date-fns/locale/pt-BR'
+import { formatDistanceToNow } from 'date-fns'
+
 // Context
 import { useCycles } from '../../contexts/cycles/useCycles'
 
@@ -10,8 +14,6 @@ export const History = () => {
   return (
     <HistoryContainer>
       <h1>Meu histórico</h1>
-
-      <pre>{JSON.stringify(cycles, null, 2)}</pre>
 
       <HistoryList>
         <table>
@@ -29,7 +31,13 @@ export const History = () => {
                 <tr key={cycle.id}>
                   <td>{cycle.task}</td>
                   <td>{cycle.minutesAmount} minutos</td>
-                  <td>{cycle.startDate.toISOString()}</td>
+                  <td>
+                    {formatDistanceToNow(cycle.startDate, {
+                      addSuffix: true,
+                      locale: ptBR,
+                    })}
+                  </td>
+
                   <td>
                     {cycle.finishedDate && (
                       <Status statusColor="green">Concluído</Status>
