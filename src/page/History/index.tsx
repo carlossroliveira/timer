@@ -1,10 +1,15 @@
 // Styles
+import { useCycles } from '../../contexts/cycles/useCycles'
 import { HistoryContainer, HistoryList, Status } from './historyStyles'
 
 export const History = () => {
+  const { cycles } = useCycles()
+
   return (
     <HistoryContainer>
       <h1>Meu histórico</h1>
+
+      <pre>{JSON.stringify(cycles, null, 2)}</pre>
 
       <HistoryList>
         <table>
